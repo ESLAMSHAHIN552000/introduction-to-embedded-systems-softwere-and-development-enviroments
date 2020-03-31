@@ -146,7 +146,7 @@ void find_median(unsigned char *arr,unsigned int SIZ)
     printf("\nThe median is : ");
     printf("%d\n",mid);
 }
-//function included in it another functions to find array statistics
+//function included in it another functions to find array statistics 
 void print_statistics(unsigned char *arr,unsigned int SIZ)
 {sort_array(arr ,SIZ);
     find_maxmum( arr,SIZ);
