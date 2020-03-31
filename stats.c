@@ -2,13 +2,6 @@
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
- * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material/******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
- *
- * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
  * software. Alex Fosdick and the University of Colorado are not liable for any
@@ -46,46 +39,118 @@ void main()
 
     /* Other Variable Declarations Go Here */
     /* Statistics and Printing Functions Go Here */
-  
+    print_array(test,SIZE);
+    print_statistics(test,SIZE);
     
 }
 
 /* Add other Implementation File Code Here */
 void find_mean(unsigned char *arr,unsigned int SIZ)
 {
-
+    unsigned int counter=0;
+    int sum=0;
+    for (counter; counter<SIZ; counter++)
+    {
+        sum = sum + arr[counter];
+    }
+    printf("\nThe mean is : ");
+    printf("%d\n",(sum/SIZ)-1);
 
 }
 //function to compare the elements of array to sort them
 void sort_array(unsigned char *arr,unsigned int SIZ)
 {
+    unsigned int i, counter =0;
+    int temp=0;
+    for (counter; counter<SIZ; counter++)
+    {
+        for (i=0; i<SIZ; i++)
+        {
+            if(arr[counter]>arr[i])
+            {
+                temp=arr[counter];
+                arr[counter]=arr[i];
+                arr[i]=temp;
+            }
+        }
 
+    }
+    printf("\n\nSorted Array is : ");
+    for (i=0; i<SIZ; i++)
+    {
+        printf("%d ",arr[i]);
+    }
 }
 //function to compare the elements of array to find the maxmum element
 void find_maxmum(unsigned char *arr,unsigned int SIZ)
 {
+    unsigned int i;
+    int max =arr[0];
 
+    for (i=0; i<SIZ; i++)
+    {
+        if (arr[i]>max)
+        {
+            max=arr[i];
+        }
+    }
+    printf("\n\nThe Maxmum number of array is : %d\n",max);
 
 }
 //function to compare the elements of array to find the minimum element
 void find_minimum(unsigned char *arr,unsigned int SIZ)
 {
+    unsigned int i;
+    int min =arr[0];
 
+    for (i=0; i<SIZ; i++)
+    {
+        if (arr[i]<min)
+        {
+            min=arr[i];
+        }
+    }
+
+    printf("\nThe Minimum number of array is : %d \n",min);
 
 }
 //function to print array elements
 void print_array(unsigned char *arr,unsigned int SIZ)
 {
-  
+    unsigned int i=0;
+    
+    printf("\nYour original array is : ");
+    for (i; i<SIZ; i++)
+    {
+        printf("%d ",arr[i]);
+
+    }
 
 }
 //a function to find the median member of un sorted array
 void find_median(unsigned char *arr,unsigned int SIZ)
 {
+    int mid;
+//if size is odd
+    if (SIZ%2!=0)
+    {
+        mid =arr[(SIZ/2)];
+    }
+//if size is even
+    if (SIZ%2==0)
+    {
 
+        mid =(arr[(SIZ/2)-1]+arr[(SIZ/2)])/2.0;
+
+    }
+    printf("\nThe median is : ");
+    printf("%d\n",mid);
 }
 //function included in it another functions to find array statistics
 void print_statistics(unsigned char *arr,unsigned int SIZ)
-{
-	
+{sort_array(arr ,SIZ);
+    find_maxmum( arr,SIZ);
+    find_minimum( arr,SIZ);
+    find_mean(arr,SIZ);
+    find_median( arr,SIZ);
 }
