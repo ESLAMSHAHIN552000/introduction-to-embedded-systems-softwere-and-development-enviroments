@@ -9,31 +9,35 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h
+ * @brief a header file contains declaration and documentation of a function
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Eslam Shahin
+ * @date 31/3/2020
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
+void print_statistics(unsigned char *arr,unsigned int SIZ);
+void find_median(unsigned char *arr,unsigned int SIZ);
+void print_array(unsigned char *arr,unsigned int SIZ);
+void find_minimum(unsigned char *arr,unsigned int SIZ);
+void find_maxmum(unsigned char *arr,unsigned int SIZ);
+void sort_array(unsigned char *arr,unsigned int SIZ);
+void find_mean(unsigned char *arr,unsigned int SIZ);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief <this function do some operation on array of afixed size such as max, min and mean value>
  *
- * <Add Extended Description Here>
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param <unsigned char *arr> <take an array from user>
+ * @param <unsigned int SIZ> <take the size of an array from user>
  *
- * @return <Add Return Informaiton here>
+ * @return void not return any value
  */
 
 
